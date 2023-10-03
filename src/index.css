@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+section {
+    @apply my-44;
+}
+
+#root {
+    @apply flex justify-center;
+    font-family: "Poppins", sans-serif;
+}
+
+.btn-primary {
+    @apply flex items-center py-5 font-medium text-white transition-colors px-7 rounded-2xl bg-zinc-800 hover:bg-black;
+}
+
+.section-heading {
+    @apply mb-12 text-4xl font-semibold text-center text-zinc-800;
+}
