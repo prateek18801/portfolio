@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import ScrollToTop from "./components/ScrollToTop";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
@@ -44,13 +45,14 @@ const App = () => {
         <>
             <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
             <div className="w-full max-w-5xl">
-                <Home homeRef={homeRef} />
+                <Home homeRef={homeRef} scrollToSection={scrollToSection} />
                 <About aboutRef={aboutRef} />
                 <Services servicesRef={servicesRef} />
                 <Portfolio portfolioRef={portfolioRef} />
                 <Contact contactRef={contactRef} />
             </div>
-            <Footer />
+            <ScrollToTop activeSection={activeSection} scrollToSection={scrollToSection} />
+            <Footer scrollToSection={scrollToSection} />
         </>
     );
 };
