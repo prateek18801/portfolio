@@ -1,7 +1,7 @@
 import { PiPaperPlaneTiltBold } from "react-icons/pi";
 import { BsLinkedin, BsInstagram, BsGithub, BsWhatsapp, BsMouse } from "react-icons/bs";
 
-const Home = ({ homeRef }: { homeRef: React.RefObject<HTMLElement> }) => {
+const Home = ({ homeRef, scrollToSection }: { homeRef: React.RefObject<HTMLElement>, scrollToSection: (s: number) => void }) => {
     return (
         <section className="flex flex-col justify-center h-screen p-0" ref={homeRef}>
             <div className="flex mt-28">
@@ -31,7 +31,7 @@ const Home = ({ homeRef }: { homeRef: React.RefObject<HTMLElement> }) => {
                 </div>
             </div>
             <div className="flex justify-center mt-32 text-3xl">
-                <button className="transition-transform duration-300 outline-none select-none hover:translate-y-1">
+                <button className="transition-transform duration-300 outline-none select-none hover:translate-y-1" onClick={() => { scrollToSection(1) }}>
                     <BsMouse />
                 </button>
             </div>
