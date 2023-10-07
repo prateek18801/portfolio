@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 section {
-    @apply my-44;
+    @apply pt-28 mb-14;
 }
 
 #root {
@@ -13,9 +13,28 @@ section {
 }
 
 .btn-primary {
-    @apply flex items-center py-5 font-medium text-white transition-colors px-7 rounded-2xl bg-zinc-800 hover:bg-black;
+    @apply flex items-center py-5 font-medium text-white transition-colors px-7 rounded-2xl bg-zinc-800 hover:bg-black select-none;
 }
 
 .section-heading {
     @apply mb-12 text-4xl font-semibold text-center text-zinc-800;
+}
+
+.home-image {
+    box-shadow: inset 0 0 0 9px rgb(255 255 255 / 30%);
+    animation: border-animate 8s ease-in-out infinite;
+}
+
+@keyframes border-animate {
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+
+    50% {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
 }
