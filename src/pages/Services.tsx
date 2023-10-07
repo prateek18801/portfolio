@@ -1,17 +1,16 @@
-import { ReactElement } from "react";
 import { FaCode } from "react-icons/fa6";
 import { FiArrowRight } from "react-icons/fi";
 import { TbSettingsCode } from "react-icons/tb";
 
 type ServiceCardProps = {
-    icon: ReactElement,
+    icon: React.ReactElement,
     l1: string,
     l2: string
 };
 
-const Services = () => {
+const Services = ({ servicesRef }: { servicesRef: React.RefObject<HTMLElement> }) => {
     return (
-        <section>
+        <section ref={servicesRef}>
             <div className="section-heading">Services</div>
             <div className="flex justify-center gap-8">
                 <ServiceCard icon={<FaCode />} l1="Web" l2="Application" />

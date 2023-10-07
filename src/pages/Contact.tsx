@@ -1,18 +1,17 @@
 import { FaLocationDot } from "react-icons/fa6";
 import { PiPaperPlaneTiltBold } from "react-icons/pi";
 import { BsFillEnvelopeAtFill } from "react-icons/bs";
-import { ReactNode } from "react";
 
 type ContactChipProps = {
-    icon: ReactNode,
+    icon: React.ReactNode,
     field: string,
     value: string,
     href: string
 }
 
-const Contact = () => {
+const Contact = ({ contactRef }: { contactRef: React.RefObject<HTMLElement> }) => {
     return (
-        <section>
+        <section ref={contactRef}>
             <div className="section-heading">Get in touch</div>
             <div className="flex gap-16 mx-24">
                 <div className="flex flex-col justify-center w-1/2 mb-10">

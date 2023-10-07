@@ -1,9 +1,9 @@
 import { PiPaperPlaneTiltBold } from "react-icons/pi";
 import { BsLinkedin, BsInstagram, BsGithub, BsWhatsapp, BsMouse } from "react-icons/bs";
 
-const Home = () => {
+const Home = ({ homeRef }: { homeRef: React.RefObject<HTMLElement> }) => {
     return (
-        <section className="flex flex-col justify-center h-screen p-0">
+        <section className="flex flex-col justify-center h-screen p-0" ref={homeRef}>
             <div className="flex mt-28">
                 <div className="flex flex-col w-2/12 gap-8 my-auto">
                     <a href="https://www.linkedin.com/in/prateekchaurasia/"><BsLinkedin /></a>
