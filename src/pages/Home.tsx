@@ -21,7 +21,7 @@ const Home = ({ homeRef, scrollToSection }: { homeRef: React.RefObject<HTMLEleme
                     <p className="mb-8 text-neutral-500">
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, et? Ipsam quod quidem est eaque!
                     </p>
-                    <button className="btn-primary">
+                    <button className="btn-primary" onClick={() => { scrollToSection(4) }}>
                         <span className="mr-2">Say Hello</span>
                         <PiPaperPlaneTiltBold />
                     </button>
