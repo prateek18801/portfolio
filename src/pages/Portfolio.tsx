@@ -74,7 +74,7 @@ const Portfolio = ({ portfolioRef }: { portfolioRef: React.RefObject<HTMLElement
 
 const PortfolioCard = ({ title, description, github, demo }: PortfolioCardProps) => {
     return (
-        <div className="w-1/4 transition-shadow rounded shadow overflow-clip hover:shadow-lg">
+        <div className="w-full transition-shadow rounded shadow md:w-1/4 overflow-clip hover:shadow-lg">
             <div className="bg-gray-300 h-36">
                 <img src="" alt="" />
             </div>
