@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 section {
-    @apply pt-28 mb-14;
+    @apply pt-28 mb-14 mx-8;
 }
 
 #root {
