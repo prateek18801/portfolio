@@ -28,7 +28,7 @@ const App = () => {
             if (entry.isIntersecting) {
                 setActiveSection(sectionRefs.findIndex((ref) => ref.current === entry.target));
             }
-        }, { rootMargin: "-100px", threshold: 0.5 });
+        }, { rootMargin: "-150px 0px", threshold: 0.4 });
 
         sectionRefs.forEach((ref) => {
             observer.observe(ref.current as HTMLElement);
