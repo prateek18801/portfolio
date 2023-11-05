@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { PiPaperPlaneTiltBold } from "react-icons/pi";
 import { BsFillEnvelopeAtFill } from "react-icons/bs";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 type ContactChipProps = {
     icon: React.ReactNode,
@@ -26,6 +27,8 @@ const Contact = ({ contactRef }: { contactRef: React.RefObject<HTMLElement> }) =
         access_key: import.meta.env.VITE_FORM_SUBMIT_KEY
     });
 
+    const [loading, setLoading] = useState<boolean>(false);
+
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData(prev => {
             return {
@@ -37,6 +40,7 @@ const Contact = ({ contactRef }: { contactRef: React.RefObject<HTMLElement> }) =
 
     const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setLoading(true);
         try {
             const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
@@ -48,15 +52,19 @@ const Contact = ({ contactRef }: { contactRef: React.RefObject<HTMLElement> }) =
             });
             const json = await response.json();
             if (json.success) {
-                // ok
+                alert("Message was sent!");
+                setFormData(prev => {
+                    return { ...prev, message: "" };
+                });
             }
             else {
-                // alert
+                alert("Failed to send message!");
             }
             console.log(json);
         } catch (err) {
-            console.log(err);
-
+            alert("Failed to send message!");
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -83,9 +91,9 @@ const Contact = ({ contactRef }: { contactRef: React.RefObject<HTMLElement> }) =
                         <textarea name="message" className="w-full h-full px-4 py-4 bg-transparent outline-none resize-none peer" value={formData.message} onChange={handleInputChange} placeholder=" " required />
                         <label htmlFor="name" className="absolute px-2 left-2 -top-[13px] pointer-events-none transition-all duration-300 scale-75 origin-left bg-white text-neutral-500 peer-placeholder-shown:top-[18.5px] peer-placeholder-shown:scale-100 peer-focus:-top-[13px] peer-focus:scale-75">Message</label>
                     </div>
-                    <button className="btn-primary" type="submit">
+                    <button className="btn-primary" type="submit" disabled={loading}>
                         <span className="mr-2">Send Message</span>
-                        <PiPaperPlaneTiltBold />
+                        {loading ? <AiOutlineLoading3Quarters className="animate-spin" /> : <PiPaperPlaneTiltBold />}
                     </button>
                 </form>
             </div>
