@@ -20,7 +20,7 @@ const Home = ({ homeRef, scrollToSection }: { homeRef: React.RefObject<HTMLEleme
                         Web Developer 🕷🕸
                     </div>
                     <p className="mb-8 text-base text-neutral-500">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, et? Ipsam quod quidem est eaque!
+                        I can build you a website or software from the ground up, and maybe fix your computer too.
                     </p>
                     <button className="btn-primary" onClick={() => { scrollToSection(4) }}>
                         <span className="mr-2">Say Hello</span>
