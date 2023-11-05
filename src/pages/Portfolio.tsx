@@ -4,7 +4,6 @@ import { FiArrowRight } from "react-icons/fi";
 type PortfolioCardProps = {
     title: string,
     description: string,
-    github: string,
     demo: string
 }
 
@@ -12,31 +11,26 @@ const projects: PortfolioCardProps[] = [
     {
         title: "Ajay Cafe",
         description: "Online food ordering system for college canteen",
-        github: "",
         demo: ""
     },
     {
         title: "BlockTrackers",
         description: "Blockchain based food supply chain tracking system, for tracking farm produce from farmers to the end customer    ",
-        github: "",
         demo: ""
     },
     {
         title: "Merchandise Portal",
         description: "Online protal for claiming official merch. of St. Louis University",
-        github: "",
         demo: ""
     },
     {
         title: "Kisan Assist",
         description: "AI Voice Assistant for farmers",
-        github: "",
         demo: ""
     },
     {
         title: "Attendance Portal",
         description: "Online attendance portal for the team members",
-        github: "",
         demo: ""
     }
 ];
@@ -51,10 +45,10 @@ const Portfolio = ({ portfolioRef }: { portfolioRef: React.RefObject<HTMLElement
             <div className="flex flex-wrap justify-center gap-8">
                 {projects.slice(0, visibleCount).map(project => {
                     return <PortfolioCard
+                        key={project.title}
                         title={project.title}
                         description={project.description}
                         demo={project.demo}
-                        github={project.github}
                     />
                 })}
             </div>
@@ -72,7 +66,7 @@ const Portfolio = ({ portfolioRef }: { portfolioRef: React.RefObject<HTMLElement
     );
 }
 
-const PortfolioCard = ({ title, description, github, demo }: PortfolioCardProps) => {
+const PortfolioCard = ({ title, description, demo }: PortfolioCardProps) => {
     return (
         <div className="w-full transition-shadow rounded shadow md:w-1/4 overflow-clip hover:shadow-lg">
             <div className="bg-gray-300 h-36">
@@ -81,10 +75,10 @@ const PortfolioCard = ({ title, description, github, demo }: PortfolioCardProps)
             <div className="p-4">
                 <div className="mb-1 text-lg font-semibold">{title}</div>
                 <p className="mb-4 text-xs">{description}</p>
-                <div className="flex items-center cursor-pointer text-neutral-500 group">
+                <a href={demo} target="_blank" className="flex items-center cursor-pointer text-neutral-500 group">
                     <span className="mr-1 text-sm font-medium transition-all group-hover:mr-2">Demo</span>
                     <FiArrowRight />
-                </div>
+                </a>
             </div>
         </div>
     );
