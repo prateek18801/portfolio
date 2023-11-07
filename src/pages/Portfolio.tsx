@@ -1,37 +1,55 @@
 import { useState } from "react";
-import { FiArrowRight } from "react-icons/fi";
+import { HiOutlineExternalLink } from "react-icons/hi";
+import ImgBigDataCoE from "../assets/bigdatacoe.webp";
+import ImgBlockTrackers from "../assets/blocktrackers.webp";
+import ImgECanteenAdmin from "../assets/ecanteen-admin.webp";
+import ImgKisanAssist from "../assets/kisan-assist.webp";
+import ImgSluMerchPortal from "../assets/slu-merch-portal.webp";
+import ImgTrackPatrol from "../assets/trackpatrol.webp";
 
 type PortfolioCardProps = {
     title: string,
     description: string,
-    demo: string
+    link: string,
+    image: string
 }
 
 const projects: PortfolioCardProps[] = [
     {
-        title: "Ajay Cafe",
-        description: "Online food ordering system for college canteen",
-        demo: ""
+        title: "BlockTrackers",
+        description: "Blockchain based food supply chain tracking system, for tracking farm produce from farmers to the end customer.",
+        link: "https://blocktrackers.shahbaz.tech/",
+        image: ImgBlockTrackers
     },
     {
-        title: "BlockTrackers",
-        description: "Blockchain based food supply chain tracking system, for tracking farm produce from farmers to the end customer    ",
-        demo: ""
+        title: "TrackPatrol",
+        description: "Tool for monitoring ground personnel using GPS, RFID etc. Also caters management and duty assignment.",
+        link: "https://trackpatrol.shahbaz.tech/",
+        image: ImgTrackPatrol
+    },
+    {
+        title: "Big Data CoE",
+        description: "Website for Big Data Centre of Excellence with an admin panel to update and manage the website.",
+        link: "https://bdcoe.co.in/",
+        image: ImgBigDataCoE
     },
     {
         title: "Merchandise Portal",
-        description: "Online protal for claiming official merch. of St. Louis University",
-        demo: ""
+        description: "Online protal for claiming official merchandise of St. Louis University, with an admin portal to view and download orders.",
+        link: "https://slu-merch.onrender.com/",
+        image: ImgSluMerchPortal
+    },
+    {
+        title: "E-Canteen Admin",
+        description: "Online food ordering system for college canteen, used to view orders and update products.",
+        link: "https://canteen-food-ordering-admin.netlify.app/products",
+        image: ImgECanteenAdmin
     },
     {
         title: "Kisan Assist",
-        description: "AI Voice Assistant for farmers",
-        demo: ""
-    },
-    {
-        title: "Attendance Portal",
-        description: "Online attendance portal for the team members",
-        demo: ""
+        description: "AI Voice Assistant for farmers, with integrations of text-to-speech, speech-to-text, google translate and twilio APIs.",
+        link: "https://prateek18801.github.io/kisan-assist/",
+        image: ImgKisanAssist
     }
 ];
 
@@ -48,7 +66,8 @@ const Portfolio = ({ portfolioRef }: { portfolioRef: React.RefObject<HTMLElement
                         key={project.title}
                         title={project.title}
                         description={project.description}
-                        demo={project.demo}
+                        link={project.link}
+                        image={project.image}
                     />
                 })}
             </div>
@@ -66,18 +85,17 @@ const Portfolio = ({ portfolioRef }: { portfolioRef: React.RefObject<HTMLElement
     );
 }
 
-const PortfolioCard = ({ title, description, demo }: PortfolioCardProps) => {
+const PortfolioCard = ({ title, description, link, image }: PortfolioCardProps) => {
     return (
-        <div className="w-full transition-shadow rounded shadow md:w-1/4 overflow-clip hover:shadow-lg">
-            <div className="bg-gray-300 h-36">
-                <img src="" alt="" />
+        <div className="w-full transition-shadow shadow rounded-lg md:w-[27%] overflow-clip hover:shadow-lg">
+            <div className="overflow-hidden bg-gray-300 h-36">
+                <img src={image} alt={title} />
             </div>
-            <div className="p-4">
+            <div className="flex flex-col p-4">
                 <div className="mb-1 text-lg font-semibold">{title}</div>
-                <p className="mb-4 text-xs">{description}</p>
-                <a href={demo} target="_blank" className="flex items-center cursor-pointer text-neutral-500 group">
-                    <span className="mr-1 text-sm font-medium transition-all group-hover:mr-2">Demo</span>
-                    <FiArrowRight />
+                <p className="h-16 mb-4 overflow-hidden text-xs text-ellipsis">{description}</p>
+                <a href={link} target="_blank" className="flex items-center text-sm font-medium text-neutral-700 hover:text-black hover:underline">
+                    View <HiOutlineExternalLink className="ml-1" />
                 </a>
             </div>
         </div>
