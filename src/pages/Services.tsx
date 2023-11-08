@@ -48,8 +48,8 @@ const Services = ({ servicesRef }: { servicesRef: React.RefObject<HTMLElement> }
                     content={{
                         header: "Custom Software",
                         content: [
-                            "Develop custom software applications for your specific needs.",
-                            "Integrate custom software with existing systems and applications.",
+                            "Develop custom software for your specific needs.",
+                            "Integrate custom software with existing systems.",
                             "Develop multi platform applications.",
                             "Deploy and maintain software applications."
                         ]
