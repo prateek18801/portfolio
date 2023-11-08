@@ -10,17 +10,17 @@ const About = ({ aboutRef }: { aboutRef: React.RefObject<HTMLElement> }) => {
                 I'm a full stack web developer with a deep understanding of web technologies and a keen eye for detail. I love planning projects from scratch and executing them till deployment. I'm passionate about building beautiful and functional websites that meet the needs of my clients.
             </p>
             <div className="flex justify-center gap-2 mb-8 md:gap-4">
-                <div className="flex flex-col items-center w-1/3 py-4 font-medium text-center border md:py-6 md:w-1/6 rounded-xl">
+                <div className="flex flex-col items-center w-1/3 py-4 font-medium text-center border-2 md:py-6 md:w-1/6 rounded-xl">
                     <div className="mb-4 text-2xl"><BsStars /></div>
                     <div className="mb-1 text-sm">Experience</div>
                     <div className="text-xs text-neutral-500">2+ Years</div>
                 </div>
-                <div className="flex flex-col items-center w-1/3 py-4 font-medium text-center border md:py-6 md:w-1/6 rounded-xl">
+                <div className="flex flex-col items-center w-1/3 py-4 font-medium text-center border-2 md:py-6 md:w-1/6 rounded-xl">
                     <div className="mb-4 text-2xl"><BiGitMerge /></div>
                     <div className="mb-1 text-sm">Work</div>
                     <div className="text-xs text-neutral-500">10+ Projects</div>
                 </div>
-                <div className="flex flex-col items-center w-1/3 py-4 font-medium text-center border md:py-6 md:w-1/6 rounded-xl">
+                <div className="flex flex-col items-center w-1/3 py-4 font-medium text-center border-2 md:py-6 md:w-1/6 rounded-xl">
                     <div className="mb-4 text-2xl"><BiSupport /></div>
                     <div className="mb-1 text-sm">Support</div>
                     <div className="text-xs text-neutral-500">Remote</div>
