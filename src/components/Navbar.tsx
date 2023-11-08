@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { LiaHamburgerSolid } from "react-icons/lia";
 
 type NavbarProps = {
@@ -9,9 +9,23 @@ type NavbarProps = {
 const Navbar = ({ activeSection, scrollToSection }: NavbarProps) => {
 
     const [isExpanded, setIsExpanded] = useState<boolean>(false);
+    
+    const navRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (navRef.current && !navRef.current.contains(event.target as Node)) {
+                setIsExpanded(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [setIsExpanded]);
 
     return (
-        <nav className="fixed z-50 flex justify-center w-full bg-white shadow">
+        <nav className="fixed z-50 flex justify-center w-full bg-white shadow" ref={navRef}>
             <div className="flex items-center justify-between w-full max-w-5xl px-8 py-4 text-sm">
                 <div className="text-2xl font-semibold select-none">PC</div>
                 <ul className="hidden md:flex">
