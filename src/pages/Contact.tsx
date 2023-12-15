@@ -91,7 +91,7 @@ const Contact = ({ contactRef }: { contactRef: React.RefObject<HTMLElement> }) =
                         <textarea name="message" id="message" className="w-full h-full px-4 py-4 bg-transparent outline-none resize-none peer" value={formData.message} onChange={handleInputChange} placeholder=" " required />
                         <label htmlFor="message" className="absolute px-2 left-2 -top-[13px] pointer-events-none transition-all duration-300 scale-75 origin-left bg-white text-neutral-500 peer-placeholder-shown:top-[18.5px] peer-placeholder-shown:scale-100 peer-focus:-top-[13px] peer-focus:scale-75">Message</label>
                     </div>
-                    <button className="btn-primary" type="submit" disabled={loading} aria-label="submit">
+                    <button className="btn-primary" type="submit" disabled={loading} aria-label="send message">
                         <span className="mr-2">Send Message</span>
                         {loading ? <AiOutlineLoading3Quarters className="animate-spin" /> : <PiPaperPlaneTiltBold />}
                     </button>
