@@ -104,7 +104,7 @@ const Contact = ({ contactRef }: { contactRef: React.RefObject<HTMLElement> }) =
 const ContactChip = ({ icon, field, value, href }: ContactChipProps) => {
     return (
         <div className="flex items-center mb-6">
-            <a href={href} target="_blank">
+            <a href={href} target="_blank" aria-label={field}>
                 <div className="flex items-center justify-center p-4 mr-3 text-2xl text-white rounded-full cursor-pointer bg-zinc-800 hover:bg-black">{icon}</div>
             </a>
             <div>

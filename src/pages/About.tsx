@@ -27,7 +27,7 @@ const About = ({ aboutRef }: { aboutRef: React.RefObject<HTMLElement> }) => {
                 </div>
             </div>
             <div className="flex justify-center">
-                <a className="btn-primary" href="https://prateek18801.github.io/resume/" target="_blank">
+                <a className="btn-primary" href="https://prateek18801.github.io/resume/" target="_blank"  aria-label="view my resume">
                     <span className="mr-2">Resume</span>
                     <CgFileDocument />
                 </a>

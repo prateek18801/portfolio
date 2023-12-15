@@ -15,10 +15,10 @@ const Footer = ({ scrollToSection }: { scrollToSection: (s: number) => void }) =
                 </ul>
             </div>
             <div className="flex gap-4 mb-6 text-lg">
-                <a href="https://www.linkedin.com/in/prateekchaurasia/"><BsLinkedin /></a>
-                <a href="https://github.com/prateek18801/"><BsGithub /></a>
-                <a href="https://wa.me/+918726127335/"><BsWhatsapp /></a>
-                <a href="https://www.instagram.com/pc.incognito/"><BsInstagram /></a>
+                <a href="https://www.linkedin.com/in/prateekchaurasia/" aria-label="visit my linkedin profile"><BsLinkedin /></a>
+                <a href="https://github.com/prateek18801/" aria-label="visit my github profile"><BsGithub /></a>
+                <a href="https://wa.me/+918726127335/" aria-label="text me on whatsapp"><BsWhatsapp /></a>
+                <a href="https://www.instagram.com/pc.incognito/" aria-label="visit my instagram profile"><BsInstagram /></a>
             </div>
             <div className="text-xs">&copy; Prateek Chaurasia. All rights reserved.</div>
         </footer>
