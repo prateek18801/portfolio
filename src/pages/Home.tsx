@@ -22,7 +22,7 @@ const Home = ({ homeRef, scrollToSection }: { homeRef: React.RefObject<HTMLEleme
                     <p className="mb-8 text-base text-neutral-500">
                         I can build you a website or software from the ground up, and maybe fix your computer too.
                     </p>
-                    <button className="btn-primary" onClick={() => { scrollToSection(4) }}>
+                    <button type="button" className="btn-primary" onClick={() => { scrollToSection(4) }} aria-label="scroll to contact">
                         <span className="mr-2">Say Hello</span>
                         <PiPaperPlaneTiltBold />
                     </button>
@@ -32,7 +32,7 @@ const Home = ({ homeRef, scrollToSection }: { homeRef: React.RefObject<HTMLEleme
                 </div>
             </div>
             <div className="flex justify-center mt-32 text-3xl">
-                <button className="transition-transform duration-300 outline-none select-none hover:translate-y-1" onClick={() => { scrollToSection(1) }}>
+                <button type="button" className="transition-transform duration-300 outline-none select-none hover:translate-y-1" onClick={() => { scrollToSection(1) }} aria-label="scroll down">
                     <BsMouse />
                 </button>
             </div>

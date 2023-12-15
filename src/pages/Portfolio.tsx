@@ -73,10 +73,12 @@ const Portfolio = ({ portfolioRef }: { portfolioRef: React.RefObject<HTMLElement
             </div>
             <div className="flex justify-center mt-12">
                 <button
+                    type="button"
                     className="text-sm hover:underline underline-offset-4"
                     onClick={() => {
                         setVisibleCount(prev => visibleCount < projects.length ? prev + 3 : 3);
                     }}
+                    aria-label="view more projects"
                 >
                     {visibleCount < projects.length ? "View More" : "Collapse"}
                 </button>
@@ -94,7 +96,7 @@ const PortfolioCard = ({ title, description, link, image }: PortfolioCardProps) 
             <div className="flex flex-col p-4">
                 <div className="mb-1 text-lg font-semibold">{title}</div>
                 <p className="h-16 mb-4 overflow-hidden text-xs text-ellipsis">{description}</p>
-                <a href={link} target="_blank" className="flex items-center text-sm font-medium text-neutral-700 hover:text-black hover:underline"  aria-label={`view ${title} project`}>
+                <a href={link} target="_blank" className="flex items-center text-sm font-medium text-neutral-700 hover:text-black hover:underline" aria-label={`view ${title} project`}>
                     View <HiOutlineExternalLink className="ml-1" />
                 </a>
             </div>

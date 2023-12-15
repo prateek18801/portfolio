@@ -66,7 +66,7 @@ const ServiceCard = ({ icon, l1, l2, content, setModalContent }: ServiceCardProp
         <div className="w-full p-8 transition-shadow border-2 rounded-xl md:w-1/3 hover:shadow-lg">
             <div className="mt-12 mb-8 text-3xl text-neutral-500">{icon}</div>
             <div className="mb-6 text-xl font-medium">{l1} <br /> {l2}</div>
-            <button className="flex items-center text-sm font-medium cursor-pointer text-neutral-500 group" onClick={() => { setModalContent(content) }}>
+            <button type="button" className="flex items-center text-sm font-medium cursor-pointer text-neutral-500 group" onClick={() => { setModalContent(content) }} aria-label="view more">
                 <span className="mr-1 transition-all group-hover:mr-2">View More</span>
                 <FiArrowRight />
             </button>

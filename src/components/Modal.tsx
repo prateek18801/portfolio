@@ -22,9 +22,11 @@ const Modal = ({ modalContent, setModalContent }: ModalProps) => {
                 <div className="flex justify-between mb-2 text-xl">
                     <TbSettingsCode />
                     <button
+                        type="button"
                         onClick={() => {
                             setModalContent(null);
                         }}
+                        aria-label="close"
                     >
                         <AiOutlineCloseCircle />
                     </button>

@@ -45,7 +45,7 @@ const Navbar = ({ activeSection, scrollToSection }: NavbarProps) => {
                         Contact
                     </li>
                 </ul>
-                <button className="text-2xl md:hidden" onClick={() => { setIsExpanded(prev => !prev) }}><LiaHamburgerSolid /></button>
+                <button className="text-2xl md:hidden" onClick={() => { setIsExpanded(prev => !prev) }} aria-label="expand navbar"><LiaHamburgerSolid /></button>
             </div>
             <div className={`absolute w-full px-8 text-sm transition-all bg-white origin-top shadow top-16 ${isExpanded ? "scale-y-100" : "scale-y-0"}`}>
                 <ul>
