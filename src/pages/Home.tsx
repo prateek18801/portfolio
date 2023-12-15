@@ -22,7 +22,7 @@ const Home = ({ homeRef, scrollToSection }: { homeRef: React.RefObject<HTMLEleme
                     <p className="mb-8 text-base text-neutral-500">
                         I can build you a website or software from the ground up, and maybe fix your computer too.
                     </p>
-                    <button type="button" className="btn-primary" onClick={() => { scrollToSection(4) }} aria-label="scroll to contact">
+                    <button type="button" className="btn-primary" onClick={() => { scrollToSection(4) }} aria-label="say hello">
                         <span className="mr-2">Say Hello</span>
                         <PiPaperPlaneTiltBold />
                     </button>

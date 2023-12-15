@@ -91,7 +91,7 @@ const PortfolioCard = ({ title, description, link, image }: PortfolioCardProps) 
     return (
         <div className="w-full transition-shadow border-2 rounded-lg md:w-[27%] overflow-clip hover:shadow-lg">
             <div className="overflow-hidden bg-gray-300 h-36">
-                <img src={image} alt={title} />
+                <img src={image} className="h-full" alt={title} />
             </div>
             <div className="flex flex-col p-4">
                 <div className="mb-1 text-lg font-semibold">{title}</div>
