@@ -80,16 +80,16 @@ const Contact = ({ contactRef }: { contactRef: React.RefObject<HTMLElement> }) =
                 <form className="w-full md:w-1/2" onSubmit={handleFormSubmit}>
                     <div className="mb-4 text-lg font-medium text-center text-zinc-800">Send me a message</div>
                     <div className="relative h-16 mb-4 border border-neutral-400 rounded-xl">
-                        <input type="text" name="name" className="w-full h-full px-4 bg-transparent outline-none peer" value={formData.name} onChange={handleInputChange} placeholder=" " required />
+                        <input type="text" name="name" id="name" className="w-full h-full px-4 bg-transparent outline-none peer" value={formData.name} onChange={handleInputChange} placeholder=" " required />
                         <label htmlFor="name" className="absolute px-2 left-2 -top-[13px] pointer-events-none transition-all duration-300 scale-75 origin-left bg-white text-neutral-500 peer-placeholder-shown:top-[18.5px] peer-placeholder-shown:scale-100 peer-focus:-top-[13px] peer-focus:scale-75">Name</label>
                     </div>
                     <div className="relative h-16 mb-4 border border-neutral-400 rounded-xl">
-                        <input type="email" name="email" className="w-full h-full px-4 bg-transparent outline-none peer" value={formData.email} onChange={handleInputChange} placeholder=" " required />
-                        <label htmlFor="name" className="absolute px-2 left-2 -top-[13px] pointer-events-none transition-all duration-300 scale-75 origin-left bg-white text-neutral-500 peer-placeholder-shown:top-[18.5px] peer-placeholder-shown:scale-100 peer-focus:-top-[13px] peer-focus:scale-75">Email</label>
+                        <input type="email" name="email" id="email" className="w-full h-full px-4 bg-transparent outline-none peer" value={formData.email} onChange={handleInputChange} placeholder=" " required />
+                        <label htmlFor="email" className="absolute px-2 left-2 -top-[13px] pointer-events-none transition-all duration-300 scale-75 origin-left bg-white text-neutral-500 peer-placeholder-shown:top-[18.5px] peer-placeholder-shown:scale-100 peer-focus:-top-[13px] peer-focus:scale-75">Email</label>
                     </div>
                     <div className="relative mb-4 border h-36 border-neutral-400 rounded-xl">
-                        <textarea name="message" className="w-full h-full px-4 py-4 bg-transparent outline-none resize-none peer" value={formData.message} onChange={handleInputChange} placeholder=" " required />
-                        <label htmlFor="name" className="absolute px-2 left-2 -top-[13px] pointer-events-none transition-all duration-300 scale-75 origin-left bg-white text-neutral-500 peer-placeholder-shown:top-[18.5px] peer-placeholder-shown:scale-100 peer-focus:-top-[13px] peer-focus:scale-75">Message</label>
+                        <textarea name="message" id="message" className="w-full h-full px-4 py-4 bg-transparent outline-none resize-none peer" value={formData.message} onChange={handleInputChange} placeholder=" " required />
+                        <label htmlFor="message" className="absolute px-2 left-2 -top-[13px] pointer-events-none transition-all duration-300 scale-75 origin-left bg-white text-neutral-500 peer-placeholder-shown:top-[18.5px] peer-placeholder-shown:scale-100 peer-focus:-top-[13px] peer-focus:scale-75">Message</label>
                     </div>
                     <button className="btn-primary" type="submit" disabled={loading}>
                         <span className="mr-2">Send Message</span>
