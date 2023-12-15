@@ -1,6 +1,6 @@
 import { PiPaperPlaneTiltBold } from "react-icons/pi";
 import { BsLinkedin, BsInstagram, BsGithub, BsWhatsapp, BsMouse } from "react-icons/bs";
-import HomeImg from "../assets/home.jpg";
+import HomeImg from "../assets/home.webp";
 
 const Home = ({ homeRef, scrollToSection }: { homeRef: React.RefObject<HTMLElement>, scrollToSection: (s: number) => void }) => {
     return (
